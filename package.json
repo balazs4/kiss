@@ -1,0 +1,10 @@
+{
+  "name": "verant",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balazs4/verant.git"
+  },
+  "author": "balazs4 <balazs4web@gmail.com>",
+  "license": "MIT"
+}
