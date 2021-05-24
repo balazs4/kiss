@@ -1,5 +1,6 @@
-# **k**eep **i**t **s**imple **s**tupid
+# verant
 
+> **k**eep **i**t **s**imple **s**tupid
 > back to the roots (tm), inspired by @remix_run
 
 ## concept
@@ -14,4 +15,4 @@ tbd
 
 ## ps
 
-it could be something big! :tada:
+it could be something big! :tada: or not...:neutral_face:
