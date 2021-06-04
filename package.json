@@ -6,5 +6,8 @@
     "url": "git+https://github.com/balazs4/verant.git"
   },
   "author": "balazs4 <balazs4web@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx onchange -i -k 'docker-compose.yml' -- docker compose up"
+  }
 }

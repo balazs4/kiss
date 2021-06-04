@@ -10,7 +10,18 @@ services:
         setInterval(() => document.querySelector("ul").innerHTML += `<li>$${Date.now()}</li>`, 1500);
         ' > index.js
         npx -q esbuild index.js --bundle --serve=80
-        
+
+  echo:
+    image: node:alpine
+    command:
+      - -e
+      - |
+        require("http").createServer((req,res) => {
+          const {query, pathname, path} = require("url").parse(req.url, true);
+          res.end(JSON.stringify({query,pathname,path,now: Date.now()}));
+          return;
+        }).listen(80);
+
   nginx:
     image: nginx:alpine
     entrypoint: /bin/sh
@@ -36,6 +47,9 @@ services:
               proxy_pass http://app;
             }
 
+            location /echo {
+              proxy_pass http://echo;
+            }
           }
         ' > /etc/nginx/conf.d/default.conf
         nginx -T && nginx -g 'daemon off;'
