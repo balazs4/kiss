@@ -8,6 +8,8 @@
   "author": "balazs4 <balazs4web@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "npx onchange -i -k 'docker-compose.yml' -- docker compose up"
+    "prestart": "docker rm -f `docker ps -aq` || true",
+    "start": "docker compose up",
+    "dev": "npx onchange -i -k 'docker-compose.yml' -- npm run -s start"
   }
 }

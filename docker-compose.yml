@@ -36,7 +36,7 @@ services:
 
         echo '
           server {
-            listen       80;
+            listen  80;
 
             location / {
                 root   /;
@@ -48,6 +48,11 @@ services:
             }
 
             location /echo {
+              proxy_pass http://echo;
+            }
+
+            location ~ /posts/(.*) {
+              rewrite ^/posts(.*)$$ $$1 break;
               proxy_pass http://echo;
             }
           }
