@@ -43,8 +43,8 @@ services:
             listen  80;
 
             location / {
-                root   /;
-                index  index.html;
+              root   /;
+              index  index.html;
             }
 
             location /index.js {
