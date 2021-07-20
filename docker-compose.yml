@@ -12,7 +12,7 @@ services:
             fetch("/echo/foo/bar").then(x => x.json()).then(x => document.querySelector("#server").innerHTML = `<pre>$${JSON.stringify(x,null,2)}</pre>` );
           }, 1500);
         ' > index.js
-        npx -q esbuild index.js --bundle --serve=80
+        npx -q esbuild index.js --bundle --minify --serve=80
 
   echo:
     image: node:alpine
